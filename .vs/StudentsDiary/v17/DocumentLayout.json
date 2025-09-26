@@ -3,35 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|c:\\users\\kacko\\source\\repos\\studentsdiary\\addnewstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:addnewstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|c:\\users\\kacko\\source\\repos\\studentsdiary\\addnewstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:addnewstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|C:\\Users\\kacko\\source\\repos\\StudentsDiary\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|C:\\Users\\kacko\\source\\repos\\StudentsDiary\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|c:\\users\\kacko\\source\\repos\\studentsdiary\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|c:\\users\\kacko\\source\\repos\\studentsdiary\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|C:\\Users\\kacko\\source\\repos\\StudentsDiary\\addnewstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:addnewstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|c:\\users\\kacko\\source\\repos\\studentsdiary\\gradesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:gradesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|c:\\users\\kacko\\source\\repos\\studentsdiary\\gradesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|C:\\Users\\kacko\\source\\repos\\StudentsDiary\\gradesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:gradesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|c:\\users\\kacko\\source\\repos\\studentsdiary\\gradesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|c:\\users\\kacko\\source\\repos\\studentsdiary\\addnewstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:addnewstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|C:\\Users\\kacko\\source\\repos\\StudentsDiary\\gradesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:gradesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|C:\\Users\\kacko\\source\\repos\\StudentsDiary\\gradesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1D5B84B-4B83-4C29-8CD2-783C0C313460}|StudentsDiary.csproj|solutionrelative:gradesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -46,11 +42,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\Student.cs",
+              "RelativeDocumentMoniker": "Student.cs",
+              "ToolTip": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\Student.cs",
+              "RelativeToolTip": "Student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T11:19:55.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GradesForm.cs",
               "DocumentMoniker": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\GradesForm.cs",
               "RelativeDocumentMoniker": "GradesForm.cs",
@@ -75,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "AddNewStudent.cs",
               "DocumentMoniker": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\AddNewStudent.cs",
               "RelativeDocumentMoniker": "AddNewStudent.cs",
@@ -88,45 +97,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Main.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\Main.Designer.cs",
-              "RelativeDocumentMoniker": "Main.Designer.cs",
-              "ToolTip": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\Main.Designer.cs",
-              "RelativeToolTip": "Main.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T08:17:52.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Main.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\Main.cs",
-              "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\Main.cs [Design]",
-              "RelativeToolTip": "Main.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T15:26:47.387Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Main.cs",
               "DocumentMoniker": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\Main.cs",
               "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\Main.cs",
-              "RelativeToolTip": "Main.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\Main.cs*",
+              "RelativeToolTip": "Main.cs*",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAwwBcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-20T20:16:28.505Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AddNewStudent.cs [Design]",
               "DocumentMoniker": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\AddNewStudent.cs",
               "RelativeDocumentMoniker": "AddNewStudent.cs",
@@ -138,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "GradesForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\GradesForm.Designer.cs",
               "RelativeDocumentMoniker": "GradesForm.Designer.cs",
@@ -151,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\kacko\\source\\repos\\StudentsDiary\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -159,8 +143,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T15:28:27.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-18T15:28:27.87Z"
             }
           ]
         }
