@@ -18,11 +18,7 @@ namespace StudentsDiary
         public Main()
         {
             InitializeComponent();
-            var students = DeserializeFromFile();
-            foreach (var student in students)
-            {
-                MessageBox.Show(student.FirstNAme);
-            }
+           
         }
         public void SerializeToFile(List<Student> students)
         {
