@@ -18,7 +18,8 @@ namespace StudentsDiary
         public Main()
         {
             InitializeComponent();
-           
+            var students = DeserializeFromFile();
+            dgvDiary.DataSource = students;
         }
         public void SerializeToFile(List<Student> students)
         {
@@ -45,7 +46,8 @@ namespace StudentsDiary
         }
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            
+            var addNewStudentForm = new AddNewStudent();
+            addNewStudentForm.ShowDialog();
         }
 
         private void btnEditGrades_Click(object sender, EventArgs e)
