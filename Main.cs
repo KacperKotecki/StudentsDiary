@@ -45,7 +45,7 @@ namespace StudentsDiary
         }
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnEditGrades_Click(object sender, EventArgs e)
