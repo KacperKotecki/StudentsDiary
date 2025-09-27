@@ -83,9 +83,39 @@ namespace StudentsDiary
 
         private void btnDeleteStudent_Click(object sender, EventArgs e)
         {
+            var students = DeserializeFromFile();
+            if (dgvDiary.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Wybierz studenta aby usunąć go z listy studentów");
+                return;
+            }
+            else if (dgvDiary.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Możesz usunąć tylko jednego studenta ");
+                return;
+            }
+            
+            var studentToDelete = students.FirstOrDefault(s => s.Id == Convert.ToInt32(dgvDiary.SelectedRows[0].Cells[0].Value));
+
+            if (studentToDelete != null)
+            {
+                var decision = MessageBox.Show($"Ten proces jest nieodwracalny\nDane studenmta : {studentToDelete.FirstNAme} {studentToDelete.LastName}  \n{studentToDelete.Pesel}  \n{studentToDelete.IndexNumber} ", "Czy na pewno chcesz usunąć studenta ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (decision == DialogResult.Yes)
+                {
+                    students.RemoveAll(s => s.Id == studentToDelete.Id);
+                    MessageBox.Show("Student został usunięty.");
+                    SerializeToFile(students);
+                    dgvDiary.DataSource = students;
+                }
+                else 
+                {
+                    return;
+                }
+            }
 
         }
-        
+
 
     }
 }
