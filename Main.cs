@@ -48,21 +48,44 @@ namespace StudentsDiary
         {
             var addNewStudentForm = new AddNewStudent();
             addNewStudentForm.ShowDialog();
+
+            var students = DeserializeFromFile();
+            dgvDiary.DataSource = students;
+
         }
 
         private void btnEditGrades_Click(object sender, EventArgs e)
         {
 
+
+
         }
 
         private void btnEditStudentDetails_Click(object sender, EventArgs e)
         {
+            if (dgvDiary.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Wybierz studenta aby edytować jego oceny");
+                return;
+            }
+            else if (dgvDiary.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Możesz edytować oceny tylko jednego studenta naraz.");
+                return;
+            }
 
+            var editStudentForm = new AddNewStudent(Convert.ToInt32(dgvDiary.SelectedRows[0].Cells[0].Value));
+            editStudentForm.ShowDialog();
+
+            var students = DeserializeFromFile();
+            dgvDiary.DataSource = students;
         }
 
         private void btnDeleteStudent_Click(object sender, EventArgs e)
         {
 
         }
+        
+
     }
 }

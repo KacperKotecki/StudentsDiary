@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.lbId = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbId = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbPesel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbIndexNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbId
@@ -53,19 +53,20 @@
             this.lbId.TabIndex = 0;
             this.lbId.Text = "ID:";
             // 
-            // textBox1
+            // tbId
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 1;
+            this.tbId.Location = new System.Drawing.Point(99, 16);
+            this.tbId.Name = "tbId";
+            this.tbId.ReadOnly = true;
+            this.tbId.Size = new System.Drawing.Size(200, 20);
+            this.tbId.TabIndex = 1;
             // 
-            // textBox2
+            // tbFirstName
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 3;
+            this.tbFirstName.Location = new System.Drawing.Point(99, 48);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(200, 20);
+            this.tbFirstName.TabIndex = 3;
             // 
             // label2
             // 
@@ -76,12 +77,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Imię";
             // 
-            // textBox3
+            // tbPesel
             // 
-            this.textBox3.Location = new System.Drawing.Point(99, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 7;
+            this.tbPesel.Location = new System.Drawing.Point(99, 117);
+            this.tbPesel.Name = "tbPesel";
+            this.tbPesel.Size = new System.Drawing.Size(200, 20);
+            this.tbPesel.TabIndex = 7;
             // 
             // label3
             // 
@@ -92,12 +93,12 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Pesel";
             // 
-            // textBox4
+            // tbLastName
             // 
-            this.textBox4.Location = new System.Drawing.Point(99, 85);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 20);
-            this.textBox4.TabIndex = 5;
+            this.tbLastName.Location = new System.Drawing.Point(99, 85);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(200, 20);
+            this.tbLastName.TabIndex = 5;
             // 
             // label4
             // 
@@ -117,12 +118,12 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Data Urodzenia";
             // 
-            // textBox6
+            // tbIndexNumber
             // 
-            this.textBox6.Location = new System.Drawing.Point(99, 152);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(200, 20);
-            this.textBox6.TabIndex = 9;
+            this.tbIndexNumber.Location = new System.Drawing.Point(99, 152);
+            this.tbIndexNumber.Name = "tbIndexNumber";
+            this.tbIndexNumber.Size = new System.Drawing.Size(200, 20);
+            this.tbIndexNumber.TabIndex = 9;
             // 
             // label6
             // 
@@ -153,31 +154,31 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // dateTimePicker1
+            // dtpBirthday
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(99, 187);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 14;
+            this.dtpBirthday.Location = new System.Drawing.Point(99, 187);
+            this.dtpBirthday.Name = "dtpBirthday";
+            this.dtpBirthday.Size = new System.Drawing.Size(200, 20);
+            this.dtpBirthday.TabIndex = 14;
             // 
             // AddNewStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 269);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpBirthday);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.tbIndexNumber);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbPesel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbId);
             this.Controls.Add(this.lbId);
             this.Name = "AddNewStudent";
             this.Text = "AddNewStudent";
@@ -189,18 +190,18 @@
         #endregion
 
         private System.Windows.Forms.Label lbId;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbId;
+        private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbPesel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbIndexNumber;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpBirthday;
     }
 }
