@@ -85,6 +85,7 @@
             this.dgvDiary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiary.Location = new System.Drawing.Point(12, 42);
             this.dgvDiary.Name = "dgvDiary";
+            this.dgvDiary.RowHeadersVisible = false;
             this.dgvDiary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDiary.Size = new System.Drawing.Size(775, 396);
             this.dgvDiary.TabIndex = 4;

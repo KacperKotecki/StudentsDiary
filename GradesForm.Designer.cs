@@ -70,6 +70,7 @@
             this.dgvGrades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrades.Location = new System.Drawing.Point(12, 69);
             this.dgvGrades.Name = "dgvGrades";
+            this.dgvGrades.RowHeadersVisible = false;
             this.dgvGrades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGrades.Size = new System.Drawing.Size(402, 362);
             this.dgvGrades.TabIndex = 2;
