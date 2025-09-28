@@ -33,7 +33,7 @@
             this.dgvGrades = new System.Windows.Forms.DataGridView();
             this.lbPesel = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
-            this.lbSurname = new System.Windows.Forms.Label();
+            this.lbLastname = new System.Windows.Forms.Label();
             this.lbIndeksNumber = new System.Windows.Forms.Label();
             this.lbBirthDate = new System.Windows.Forms.Label();
             this.lbAddNewGrade = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.cbChooseStudent.Name = "cbChooseStudent";
             this.cbChooseStudent.Size = new System.Drawing.Size(201, 21);
             this.cbChooseStudent.TabIndex = 0;
+            this.cbChooseStudent.SelectedIndexChanged += new System.EventHandler(this.cbChooseStudent_SelectedIndexChanged);
             // 
             // lbChooseStudent
             // 
@@ -73,47 +74,47 @@
             // lbPesel
             // 
             this.lbPesel.AutoSize = true;
-            this.lbPesel.Location = new System.Drawing.Point(574, 69);
+            this.lbPesel.Location = new System.Drawing.Point(490, 69);
             this.lbPesel.Name = "lbPesel";
-            this.lbPesel.Size = new System.Drawing.Size(33, 13);
+            this.lbPesel.Size = new System.Drawing.Size(73, 13);
             this.lbPesel.TabIndex = 3;
-            this.lbPesel.Text = "Pesel";
+            this.lbPesel.Text = "04282500552";
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
             this.lbName.Location = new System.Drawing.Point(490, 38);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(26, 13);
+            this.lbName.Size = new System.Drawing.Size(24, 13);
             this.lbName.TabIndex = 4;
-            this.lbName.Text = "Imię";
+            this.lbName.Text = "Jan";
             // 
-            // lbSurname
+            // lbLastname
             // 
-            this.lbSurname.AutoSize = true;
-            this.lbSurname.Location = new System.Drawing.Point(609, 39);
-            this.lbSurname.Name = "lbSurname";
-            this.lbSurname.Size = new System.Drawing.Size(53, 13);
-            this.lbSurname.TabIndex = 5;
-            this.lbSurname.Text = "Nazwisko";
+            this.lbLastname.AutoSize = true;
+            this.lbLastname.Location = new System.Drawing.Point(609, 39);
+            this.lbLastname.Name = "lbLastname";
+            this.lbLastname.Size = new System.Drawing.Size(49, 13);
+            this.lbLastname.TabIndex = 5;
+            this.lbLastname.Text = "Kowalski";
             // 
             // lbIndeksNumber
             // 
             this.lbIndeksNumber.AutoSize = true;
-            this.lbIndeksNumber.Location = new System.Drawing.Point(562, 101);
+            this.lbIndeksNumber.Location = new System.Drawing.Point(490, 97);
             this.lbIndeksNumber.Name = "lbIndeksNumber";
-            this.lbIndeksNumber.Size = new System.Drawing.Size(59, 13);
+            this.lbIndeksNumber.Size = new System.Drawing.Size(43, 13);
             this.lbIndeksNumber.TabIndex = 6;
-            this.lbIndeksNumber.Text = "Nr Indeksu";
+            this.lbIndeksNumber.Text = "557334";
             // 
             // lbBirthDate
             // 
             this.lbBirthDate.AutoSize = true;
-            this.lbBirthDate.Location = new System.Drawing.Point(551, 134);
+            this.lbBirthDate.Location = new System.Drawing.Point(490, 131);
             this.lbBirthDate.Name = "lbBirthDate";
-            this.lbBirthDate.Size = new System.Drawing.Size(79, 13);
+            this.lbBirthDate.Size = new System.Drawing.Size(54, 13);
             this.lbBirthDate.TabIndex = 7;
-            this.lbBirthDate.Text = "Data urodzenia";
+            this.lbBirthDate.Text = "12-Jun-98";
             // 
             // lbAddNewGrade
             // 
@@ -182,7 +183,7 @@
             this.Controls.Add(this.lbAddNewGrade);
             this.Controls.Add(this.lbBirthDate);
             this.Controls.Add(this.lbIndeksNumber);
-            this.Controls.Add(this.lbSurname);
+            this.Controls.Add(this.lbLastname);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbPesel);
             this.Controls.Add(this.dgvGrades);
@@ -203,7 +204,7 @@
         private System.Windows.Forms.DataGridView dgvGrades;
         private System.Windows.Forms.Label lbPesel;
         private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.Label lbSurname;
+        private System.Windows.Forms.Label lbLastname;
         private System.Windows.Forms.Label lbIndeksNumber;
         private System.Windows.Forms.Label lbBirthDate;
         private System.Windows.Forms.Label lbAddNewGrade;

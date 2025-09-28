@@ -23,6 +23,11 @@ namespace StudentsDiary
         {
             Grades = new List<Grade>();
         }
+
+        public override string ToString()
+        {
+            return $"{Id}. {FirstNAme} {LastName}";
+        }
     }
     
 }

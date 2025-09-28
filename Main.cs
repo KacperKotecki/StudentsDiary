@@ -56,8 +56,8 @@ namespace StudentsDiary
 
         private void btnEditGrades_Click(object sender, EventArgs e)
         {
-
-
+            var gradesForm = new GradesForm();
+            gradesForm.ShowDialog();
 
         }
 
