@@ -58,8 +58,10 @@ namespace StudentsDiary
                 MessageBox.Show("Wpisz poprawną ocenę (od 1 do 6)");
                 return;
             }
+
             var newGrade = new Grade
             {
+
                 SubjectName = selectedSubject,
                 Values = gradeValue,
                 DateOfGrade = DateTime.Now
@@ -87,6 +89,43 @@ namespace StudentsDiary
             {
                 MessageBox.Show("Wybierz studenta");
                 return;
+            }
+            var selectedStudent = (Student)cbChooseStudent.SelectedItem;
+            var gradeToDelete = selectedStudent.Grades.FirstOrDefault(g => g.Values.ToString() == dgvGrades.SelectedRows[0].Cells[1].Value.ToString() && g.SubjectName == dgvGrades.SelectedRows[0].Cells[0].Value.ToString() && g.DateOfGrade.ToString() == dgvGrades.SelectedRows[0].Cells[2].Value.ToString());
+
+            if (dgvGrades.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Wybierz studenta aby usunąć go z listy studentów");
+                return;
+            }
+            else if (dgvGrades.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Możesz usunąć tylko jednego studenta ");
+                return;
+            }
+
+
+
+            if (gradeToDelete != null)
+            {
+                var decision = MessageBox.Show($"Ten proces jest nieodwracalny\nocena którą chcesz usunąć : {gradeToDelete.SubjectName} {gradeToDelete.Values}  \n{gradeToDelete.DateOfGrade}  ", "Czy na pewno chcesz usunąć tą ocenę ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (decision == DialogResult.Yes)
+                {
+                    selectedStudent.Grades.RemoveAll(g => g.Values.ToString() == dgvGrades.SelectedRows[0].Cells[1].Value.ToString() && g.SubjectName == dgvGrades.SelectedRows[0].Cells[0].Value.ToString() && g.DateOfGrade.ToString() == dgvGrades.SelectedRows[0].Cells[2].Value.ToString());
+                    MessageBox.Show("Ocena została usunięta");
+
+                    SerializeToFile(_students);
+
+                    dgvGrades.DataSource = null;
+                    dgvGrades.DataSource = selectedStudent.Grades;
+                }
+                else
+                {
+                    return;
+                }
+
+
             }
         }
 
