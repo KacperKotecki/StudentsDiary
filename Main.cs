@@ -20,6 +20,7 @@ namespace StudentsDiary
             InitializeComponent();
             var students = DeserializeFromFile();
             dgvDiary.DataSource = students;
+            SetColumnHeaders();
         }
         public void SerializeToFile(List<Student> students)
         {
@@ -128,7 +129,16 @@ namespace StudentsDiary
             }
 
         }
-
+        private void SetColumnHeaders()
+        {
+            dgvDiary.Columns[0].HeaderText = "Id";
+            dgvDiary.Columns[1].HeaderText = "Imię";
+            dgvDiary.Columns[2].HeaderText = "Nazwisko";
+            dgvDiary.Columns[3].HeaderText = "Pesel";
+            dgvDiary.Columns[4].HeaderText = "Numer indeksu";
+            dgvDiary.Columns[5].HeaderText = "Data urodzenia";
+            
+        }
 
     }
 }

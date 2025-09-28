@@ -21,6 +21,8 @@ namespace StudentsDiary
         {
             InitializeComponent();
             _students = DeserializeFromFile();
+            
+
             foreach (var student in _students)
             {
                 cbChooseStudent.Items.Add(student);
@@ -177,8 +179,16 @@ namespace StudentsDiary
             lbBirthDate.Text = selectedStudent.DateOfBirth.ToShortDateString();
 
             dgvGrades.DataSource = selectedStudent.Grades;
+            SetColumnHeaders();
+
+        }
+        private void SetColumnHeaders()
+        {
+            dgvGrades.Columns[0].HeaderText = "Przedmiot";
+            dgvGrades.Columns[1].HeaderText = "Ocena";
+            dgvGrades.Columns[2].HeaderText = "Data wystawienia oceny";
+
         }
 
-       
     }
 }
