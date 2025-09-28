@@ -65,13 +65,31 @@ namespace StudentsDiary
                 DateOfGrade = DateTime.Now
 
             };
-            
+
             selectedStudent.Grades.Add(newGrade);
 
             SerializeToFile(_students);
             dgvGrades.DataSource = null;
             dgvGrades.DataSource = selectedStudent.Grades;
         }
+        private void btnEditGrades_Click(object sender, EventArgs e)
+        {
+            if (cbChooseStudent.SelectedItem == null)
+            {
+                MessageBox.Show("Wybierz studenta");
+                return;
+            }
+        }
+
+        private void btnDeleteGrades_Click(object sender, EventArgs e)
+        {
+            if (cbChooseStudent.SelectedItem == null)
+            {
+                MessageBox.Show("Wybierz studenta");
+                return;
+            }
+        }
+
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
@@ -120,5 +138,7 @@ namespace StudentsDiary
 
             dgvGrades.DataSource = selectedStudent.Grades;
         }
+
+       
     }
 }
