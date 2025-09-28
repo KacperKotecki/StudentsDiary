@@ -21,19 +21,7 @@ namespace StudentsDiary
         {
             InitializeComponent();
             _students = DeserializeFromFile();
-            
-
-            foreach (var student in _students)
-            {
-                cbChooseStudent.Items.Add(student);
-            }
-            var listOfSubjects = new List<string> { "Matematyka", "Fizyka", "Chemia", "Biologia", "Historia", "WOS", "Informatyka", "Język Polski", "Język Angielski", "Język Niemiecki", "Wychowanie Fizyczne" };
-            foreach (var subject in listOfSubjects)
-            {
-                cbListOfSubject.Items.Add(subject);
-            }
-            cbChooseStudent.SelectedItem = _students.FirstOrDefault(s => s.Id == id);
-
+            AddItemsToComboBox(id);
         }
 
         private void btnAddNewGrades_Click(object sender, EventArgs e)
@@ -188,6 +176,23 @@ namespace StudentsDiary
             dgvGrades.Columns[1].HeaderText = "Ocena";
             dgvGrades.Columns[2].HeaderText = "Data wystawienia oceny";
 
+        }
+
+        private void AddItemsToComboBox(int id)
+        {
+            var listOfSubjects = new List<string>
+            { "Matematyka", "Fizyka", "Chemia", "Biologia", "Historia", "WOS", "Informatyka", "Język Polski", "Język Angielski", "Język Niemiecki", "Wychowanie Fizyczne" };
+
+            foreach (var student in _students)
+            {
+                cbChooseStudent.Items.Add(student);
+            }
+           
+            foreach (var subject in listOfSubjects)
+            {
+                cbListOfSubject.Items.Add(subject);
+            }
+            cbChooseStudent.SelectedItem = _students.FirstOrDefault(s => s.Id == id);
         }
 
     }
