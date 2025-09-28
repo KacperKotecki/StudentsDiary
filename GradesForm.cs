@@ -17,7 +17,7 @@ namespace StudentsDiary
         private string _filePath = Path.Combine(Environment.CurrentDirectory, "..\\..\\", "students.txt");
         private List<Student> _students;
 
-        public GradesForm()
+        public GradesForm(int id)
         {
             InitializeComponent();
             _students = DeserializeFromFile();
@@ -30,6 +30,7 @@ namespace StudentsDiary
             {
                 cbListOfSubject.Items.Add(subject);
             }
+            cbChooseStudent.SelectedItem = _students.FirstOrDefault(s => s.Id == id);
 
         }
 

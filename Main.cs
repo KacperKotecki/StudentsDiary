@@ -56,9 +56,22 @@ namespace StudentsDiary
 
         private void btnEditGrades_Click(object sender, EventArgs e)
         {
-            var gradesForm = new GradesForm();
-            gradesForm.ShowDialog();
+            var valueFromCell = dgvDiary.SelectedRows[0].Cells[0].Value;
 
+
+            if (dgvDiary.SelectedRows.Count == 1 && int.TryParse(valueFromCell.ToString(),
+                    out int id))
+            {
+                var gradesForm = new GradesForm(id);
+                gradesForm.ShowDialog();
+            }
+            else
+            {
+                var gradesForm = new GradesForm(0);
+                gradesForm.ShowDialog();
+            }
+                
+            
         }
 
         private void btnEditStudentDetails_Click(object sender, EventArgs e)
