@@ -12,6 +12,6 @@ namespace StudentsDiary
         public string SubjectName { get; set; }
         public double Values { get; set; }
 
-        
+        public DateTime DateOfGrade { get; set; }
     }
 }
