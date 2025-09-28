@@ -43,7 +43,6 @@
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btcClose = new System.Windows.Forms.Button();
             this.btnDeleteGrades = new System.Windows.Forms.Button();
-            this.btnEditGrades = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,16 +138,16 @@
             // 
             // tbGrades
             // 
-            this.tbGrades.Location = new System.Drawing.Point(493, 325);
+            this.tbGrades.Location = new System.Drawing.Point(702, 207);
             this.tbGrades.Name = "tbGrades";
-            this.tbGrades.Size = new System.Drawing.Size(296, 20);
+            this.tbGrades.Size = new System.Drawing.Size(94, 20);
             this.tbGrades.TabIndex = 10;
             // 
             // btnAddNewGrades
             // 
-            this.btnAddNewGrades.Location = new System.Drawing.Point(495, 351);
+            this.btnAddNewGrades.Location = new System.Drawing.Point(490, 386);
             this.btnAddNewGrades.Name = "btnAddNewGrades";
-            this.btnAddNewGrades.Size = new System.Drawing.Size(94, 23);
+            this.btnAddNewGrades.Size = new System.Drawing.Size(149, 23);
             this.btnAddNewGrades.TabIndex = 11;
             this.btnAddNewGrades.Text = "Dodaj Ocenę";
             this.btnAddNewGrades.UseVisualStyleBackColor = true;
@@ -156,9 +155,9 @@
             // 
             // btnSaveChanges
             // 
-            this.btnSaveChanges.Location = new System.Drawing.Point(493, 408);
+            this.btnSaveChanges.Location = new System.Drawing.Point(490, 415);
             this.btnSaveChanges.Name = "btnSaveChanges";
-            this.btnSaveChanges.Size = new System.Drawing.Size(145, 23);
+            this.btnSaveChanges.Size = new System.Drawing.Size(151, 23);
             this.btnSaveChanges.TabIndex = 12;
             this.btnSaveChanges.Text = "Zapisz zmiany";
             this.btnSaveChanges.UseVisualStyleBackColor = true;
@@ -166,9 +165,9 @@
             // 
             // btcClose
             // 
-            this.btcClose.Location = new System.Drawing.Point(644, 408);
+            this.btcClose.Location = new System.Drawing.Point(647, 415);
             this.btcClose.Name = "btcClose";
-            this.btcClose.Size = new System.Drawing.Size(145, 23);
+            this.btcClose.Size = new System.Drawing.Size(149, 23);
             this.btcClose.TabIndex = 13;
             this.btcClose.Text = "Zamknij";
             this.btcClose.UseVisualStyleBackColor = true;
@@ -176,30 +175,19 @@
             // 
             // btnDeleteGrades
             // 
-            this.btnDeleteGrades.Location = new System.Drawing.Point(695, 351);
+            this.btnDeleteGrades.Location = new System.Drawing.Point(647, 386);
             this.btnDeleteGrades.Name = "btnDeleteGrades";
-            this.btnDeleteGrades.Size = new System.Drawing.Size(94, 23);
+            this.btnDeleteGrades.Size = new System.Drawing.Size(149, 23);
             this.btnDeleteGrades.TabIndex = 14;
             this.btnDeleteGrades.Text = "Usuń Ocenę";
             this.btnDeleteGrades.UseVisualStyleBackColor = true;
             this.btnDeleteGrades.Click += new System.EventHandler(this.btnDeleteGrades_Click);
-            // 
-            // btnEditGrades
-            // 
-            this.btnEditGrades.Location = new System.Drawing.Point(595, 351);
-            this.btnEditGrades.Name = "btnEditGrades";
-            this.btnEditGrades.Size = new System.Drawing.Size(94, 23);
-            this.btnEditGrades.TabIndex = 15;
-            this.btnEditGrades.Text = "Edytuj Ocenę";
-            this.btnEditGrades.UseVisualStyleBackColor = true;
-            this.btnEditGrades.Click += new System.EventHandler(this.btnEditGrades_Click);
             // 
             // GradesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 450);
-            this.Controls.Add(this.btnEditGrades);
             this.Controls.Add(this.btnDeleteGrades);
             this.Controls.Add(this.btcClose);
             this.Controls.Add(this.btnSaveChanges);
@@ -240,6 +228,5 @@
         private System.Windows.Forms.Button btnSaveChanges;
         private System.Windows.Forms.Button btcClose;
         private System.Windows.Forms.Button btnDeleteGrades;
-        private System.Windows.Forms.Button btnEditGrades;
     }
 }
