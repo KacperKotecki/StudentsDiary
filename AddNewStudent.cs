@@ -29,6 +29,9 @@ namespace StudentsDiary
         {
             InitializeComponent();
             _isEditMode = true;
+            Text = "Edytuj dane studenta";
+
+
             tbFirstName.Select();
 
             var students = DeserializeFromFile();
@@ -50,6 +53,8 @@ namespace StudentsDiary
 
             if (_isEditMode)
             {
+                
+
                 var studentToUpdate = students.FirstOrDefault(s => s.Id.ToString() == tbId.Text);
                 if (studentToUpdate != null)
                 {

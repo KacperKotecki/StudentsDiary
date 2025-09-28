@@ -180,8 +180,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbId);
             this.Controls.Add(this.lbId);
+            this.MaximumSize = new System.Drawing.Size(342, 308);
+            this.MinimumSize = new System.Drawing.Size(342, 308);
             this.Name = "AddNewStudent";
-            this.Text = "AddNewStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Dodaj Studenta";
             this.ResumeLayout(false);
             this.PerformLayout();
 

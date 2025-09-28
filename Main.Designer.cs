@@ -101,7 +101,7 @@
             this.Controls.Add(this.btnEditGrades);
             this.Controls.Add(this.btnAddStudent);
             this.Name = "Main";
-            this.Text = " ";
+            this.Text = " Dziennik Studenta";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).EndInit();
             this.ResumeLayout(false);
 
