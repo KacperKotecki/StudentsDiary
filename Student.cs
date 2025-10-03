@@ -19,6 +19,8 @@ namespace StudentsDiary
         public string IndexNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
 
+        public AcademicProfile AcademicProfile { get; set; } // dodać do commita 
+
         public Student()
         {
             Grades = new List<Grade>();
