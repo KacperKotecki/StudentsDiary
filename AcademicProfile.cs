@@ -10,8 +10,6 @@ namespace StudentsDiary
 {
     public class AcademicProfile
     {
-        public readonly List<string> _degree = new List<string>(new[] { "I stopnia licencjat", "I stopnia inżynier", "magisterskie", "Jednolite magisterskie", "Studia podyplomowe", "Doktoranckie" });
-
         public string ProfileName { get; set; }
 
         public string Degree { get; set; }// typ studiów (inż, mgr, lic)
