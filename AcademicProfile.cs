@@ -56,5 +56,10 @@ namespace StudentsDiary
         public string Group { get; set; }
         public string Specialization { get; set; }
 
+        public override string ToString()
+        {
+            return $"{ProfileName}, {Degree}, rok {Year}, grupa {Group}, specjalizacja: {Specialization}";
+        }
+
     }
 }
