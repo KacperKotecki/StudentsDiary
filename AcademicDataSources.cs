@@ -27,7 +27,8 @@ namespace StudentsDiary
             "magisterskie",
             "Jednolite magisterskie",
             "Studia podyplomowe",
-            "Doktoranckie"  };
+            "Doktoranckie"
+        };
 
 
         public static readonly Dictionary<string, (int Min, int Max)> YearForDegree = new Dictionary<string, (int Min, int Max)>

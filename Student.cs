@@ -24,6 +24,7 @@ namespace StudentsDiary
         public Student()
         {
             Grades = new List<Grade>();
+            AcademicProfile = new AcademicProfile();
         }
 
         public override string ToString()

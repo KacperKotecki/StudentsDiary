@@ -23,6 +23,9 @@ namespace StudentsDiary
             InitializeComponent();
             _isEditMode = false;
             tbFirstName.Select();
+            InicjalizeCombobox(AcademicDataSources.Profiles, cbProfileName);
+            InicjalizeCombobox(AcademicDataSources.Degrees, cbDegree);
+            InicjalizeCombobox(AcademicDataSources.Groups, cbGroups);
 
         }
         public AddNewStudent(int id)
@@ -44,7 +47,98 @@ namespace StudentsDiary
             tbIndexNumber.Text = thisstudent.IndexNumber;
             dtpBirthday.Value = thisstudent.DateOfBirth;
 
+
+            InicjalizeCombobox(AcademicDataSources.Profiles, cbProfileName);
+            InicjalizeCombobox(AcademicDataSources.Degrees, cbDegree);
+            InicjalizeCombobox(AcademicDataSources.Groups, cbGroups);
+
+            
+            cbProfileName.SelectedItem = thisstudent.AcademicProfile.ProfileName.ToString();
+            cbDegree.SelectedItem = thisstudent.AcademicProfile.Degree.ToString();
+            nudYear.Value = thisstudent.AcademicProfile.Year;
+            cbGroups.SelectedItem = thisstudent.AcademicProfile.Group.ToString();
+            if(thisstudent.AcademicProfile.Specialization != null)
+            {
+                chbSpecjalization.Checked = true;
+                cbSpecjalization.SelectedItem = thisstudent.AcademicProfile.Specialization.ToString();
+            }
+            else
+            {
+                chbSpecjalization.Checked = false;
+                cbSpecjalization.SelectedItem = null;
+                cbSpecjalization.Enabled = false;
+            }
+
+
             tbFirstName.Enabled = true;
+        }
+
+        
+
+        
+
+        private void InicjalizeCombobox(List<string> listWithtemsToAdd, ComboBox comboBox)
+        {
+            foreach (var item in listWithtemsToAdd)
+            {
+                comboBox.Items.Add(item);
+            }
+        }
+       
+
+        private void cbDegree_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nudYear.Enabled = true;
+            var selectedDegree = cbDegree.SelectedItem.ToString();
+            if (AcademicDataSources.YearForDegree.ContainsKey(selectedDegree))
+            {
+                var (Min, Max) = AcademicDataSources.YearForDegree[selectedDegree];
+                nudYear.Minimum = Min;
+                nudYear.Maximum = Max;
+                nudYear.Value = Min;
+            }
+            else
+            {
+
+                nudYear.Value = 1;
+            }
+        }
+
+        private void chbSpecjalization_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (cbProfileName.SelectedItem == null)
+            {
+                MessageBox.Show("Wybierz najpierw profil studiów.");
+                chbSpecjalization.Checked = false;
+                return;
+            }
+
+            if (chbSpecjalization.Checked)
+            {
+                cbSpecjalization.Enabled = true;
+                var selectedProfile = cbProfileName.SelectedItem.ToString();
+                List<string> listWithSpecializations = new List<string>();
+                listWithSpecializations = AcademicDataSources.SpecializationsByProfile[selectedProfile];
+
+
+                InicjalizeCombobox(listWithSpecializations, cbSpecjalization);
+            }
+            else
+            {
+                cbSpecjalization.Items.Clear();
+                cbSpecjalization.Enabled = false;
+                
+            }
+
+        }
+
+        private void cbProfileName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            chbSpecjalization.Checked = false;
+            cbSpecjalization.Enabled = false;
+            cbSpecjalization.Items.Clear();
+            cbSpecjalization.Text = string.Empty;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -53,7 +147,7 @@ namespace StudentsDiary
 
             if (_isEditMode)
             {
-                
+
 
                 var studentToUpdate = students.FirstOrDefault(s => s.Id.ToString() == tbId.Text);
                 if (studentToUpdate != null)
@@ -63,6 +157,12 @@ namespace StudentsDiary
                     studentToUpdate.Pesel = tbPesel.Text;
                     studentToUpdate.IndexNumber = tbIndexNumber.Text;
                     studentToUpdate.DateOfBirth = dtpBirthday.Value;
+
+                    studentToUpdate.AcademicProfile.ProfileName = cbProfileName.SelectedItem.ToString();
+                    studentToUpdate.AcademicProfile.Degree = cbDegree.SelectedItem.ToString();
+                    studentToUpdate.AcademicProfile.Year = (int)nudYear.Value;
+                    studentToUpdate.AcademicProfile.Group = cbGroups.SelectedItem.ToString();
+                    studentToUpdate.AcademicProfile.Specialization = cbSpecjalization.SelectedItem?.ToString();
                 }
             }
             else
@@ -79,6 +179,14 @@ namespace StudentsDiary
                     Grades = new List<Grade>(),
                     IndexNumber = tbIndexNumber.Text,
                     DateOfBirth = dtpBirthday.Value,
+                    AcademicProfile = new AcademicProfile
+                    {
+                        ProfileName = cbProfileName.SelectedItem?.ToString(),
+                        Degree = cbDegree.SelectedItem?.ToString(),
+                        Year = (int)nudYear.Value,
+                        Group = cbGroups.SelectedItem?.ToString(),
+                        Specialization = cbSpecjalization.SelectedItem?.ToString()
+                    }
                 };
                 students.Add(newStudent);
             }

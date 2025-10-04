@@ -24,7 +24,9 @@ namespace StudentsDiary
 
             set
             {
-                if(Degree != null && AcademicDataSources.YearForDegree.ContainsKey(Degree))
+
+                
+                if (Degree != null&& AcademicDataSources.YearForDegree.ContainsKey(Degree))
                 {
                     var (Min, Max) = AcademicDataSources.YearForDegree[Degree];
                     if (value < Min || value > Max)
@@ -39,7 +41,10 @@ namespace StudentsDiary
                 else
                 {
                     throw new InvalidOperationException("Ustaw profil studiów przed ustawieniem roku studiów.");
+                    
                 }
+
+                
 
 
             }
@@ -49,7 +54,6 @@ namespace StudentsDiary
 
 
         public string Group { get; set; }
-
         public string Specialization { get; set; }
 
     }

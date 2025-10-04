@@ -234,6 +234,7 @@
             this.cbProfileName.Name = "cbProfileName";
             this.cbProfileName.Size = new System.Drawing.Size(222, 24);
             this.cbProfileName.TabIndex = 20;
+            this.cbProfileName.SelectedIndexChanged += new System.EventHandler(this.cbProfileName_SelectedIndexChanged);
             // 
             // cbDegree
             // 
@@ -242,9 +243,11 @@
             this.cbDegree.Name = "cbDegree";
             this.cbDegree.Size = new System.Drawing.Size(222, 24);
             this.cbDegree.TabIndex = 21;
+            this.cbDegree.SelectedIndexChanged += new System.EventHandler(this.cbDegree_SelectedIndexChanged);
             // 
             // nudYear
             // 
+            this.nudYear.Enabled = false;
             this.nudYear.Location = new System.Drawing.Point(496, 102);
             this.nudYear.Name = "nudYear";
             this.nudYear.Size = new System.Drawing.Size(222, 22);
@@ -277,6 +280,7 @@
             this.chbSpecjalization.Size = new System.Drawing.Size(18, 17);
             this.chbSpecjalization.TabIndex = 26;
             this.chbSpecjalization.UseVisualStyleBackColor = true;
+            this.chbSpecjalization.CheckedChanged += new System.EventHandler(this.chbSpecjalization_CheckedChanged);
             // 
             // cbGroups
             // 
