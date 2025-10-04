@@ -24,61 +24,21 @@ namespace StudentsDiary
 
             set
             {
-                switch (Degree)
+                if(Degree != null && AcademicDataSources.YearForDegree.ContainsKey(Degree))
                 {
-                    case "I stopnia licencjat":
-
-                        if (value < 1 || value > 3)
-                            throw new ArgumentOutOfRangeException("Dla studiów licencjackich, proszę podać wartość od 1 do 3");
-                        else
-                            _year = value;
-
-                        break;
-                    case "I stopnia inżynier":
-
-                        if (value < 1 || value > 3)
-                            throw new ArgumentOutOfRangeException("Dla studiów inżynierskich, proszę podać wartość od 1 do 3");
-                        else
-                            _year = value;
-
-                        break;
-                    case "magisterskie":
-
-                        if (value < 1|| value > 2)
-                            throw new ArgumentOutOfRangeException("Dla studiów magisterskich, proszę podać wartość od 1 do 2");
-                        else
-                            _year = value;
-
-                        break;
-                    case "Jednolite magisterskie":
-
-                        if (value < 1 || value > 5)
-                            throw new ArgumentOutOfRangeException("Dla studiów jednolitych magisterskich, proszę podać wartość od 1 do 5");
-                        else
-                            _year = value;
-
-                        break;
-                    case "Studia podyplomowe":
-
-                        if (value < 1 || value > 2)
-                            throw new ArgumentOutOfRangeException("Dla studiów podyplomowych, proszę podać wartość 1 lub 2");
-                        else
-                            _year = value;
-
-                        break;
-                    case "Doktoranckie":
-
-                        if (value < 1 || value > 4)
-                            throw new ArgumentOutOfRangeException("Dla studiów doktoranckich, proszę podać wartość od 1 do 4");
-                        else
-                            _year = value;
-
-                        break;
-                    default:
-                        throw new InvalidOperationException($"Nie można ustawić roku, ponieważ stopień studiów {Degree} jest nieznany lub nieustawiony.");
-                        break;
-
-                        
+                    var (Min, Max) = AcademicDataSources.YearForDegree[Degree];
+                    if (value < Min || value > Max)
+                    {
+                        throw new ArgumentOutOfRangeException($"Rok studiów musi być w zakresie od {Min} do {Max} dla studiów {Degree}");
+                    }
+                    else
+                    {
+                        _year = value;
+                    }
+                }
+                else
+                {
+                    throw new InvalidOperationException("Ustaw profil studiów przed ustawieniem roku studiów.");
                 }
 
 
