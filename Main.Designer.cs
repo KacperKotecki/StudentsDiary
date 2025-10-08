@@ -33,6 +33,7 @@
             this.btnEditStudentDetails = new System.Windows.Forms.Button();
             this.btnDeleteStudent = new System.Windows.Forms.Button();
             this.dgvDiary = new System.Windows.Forms.DataGridView();
+            this.cbProfileName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,21 +87,33 @@
             this.dgvDiary.Location = new System.Drawing.Point(12, 42);
             this.dgvDiary.Name = "dgvDiary";
             this.dgvDiary.RowHeadersVisible = false;
+            this.dgvDiary.RowHeadersWidth = 51;
             this.dgvDiary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiary.Size = new System.Drawing.Size(775, 396);
+            this.dgvDiary.Size = new System.Drawing.Size(1460, 707);
             this.dgvDiary.TabIndex = 4;
+            // 
+            // cbProfileName
+            // 
+            this.cbProfileName.FormattingEnabled = true;
+            this.cbProfileName.Location = new System.Drawing.Point(579, 13);
+            this.cbProfileName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbProfileName.Name = "cbProfileName";
+            this.cbProfileName.Size = new System.Drawing.Size(151, 21);
+            this.cbProfileName.TabIndex = 5;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1484, 761);
+            this.Controls.Add(this.cbProfileName);
             this.Controls.Add(this.dgvDiary);
             this.Controls.Add(this.btnDeleteStudent);
             this.Controls.Add(this.btnEditStudentDetails);
             this.Controls.Add(this.btnEditGrades);
             this.Controls.Add(this.btnAddStudent);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Dziennik Studenta";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).EndInit();
             this.ResumeLayout(false);
@@ -114,6 +127,7 @@
         private System.Windows.Forms.Button btnEditStudentDetails;
         private System.Windows.Forms.Button btnDeleteStudent;
         private System.Windows.Forms.DataGridView dgvDiary;
+        private System.Windows.Forms.ComboBox cbProfileName;
     }
 }
 
