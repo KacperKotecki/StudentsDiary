@@ -21,6 +21,7 @@ namespace StudentsDiary
             var students = DeserializeFromFile();
             dgvDiary.DataSource = students;
             SetColumnHeaders();
+            InicjalizeCombobox(AcademicDataSources.Profiles, cbProfileName);
         }
         public void SerializeToFile(List<Student> students)
         {
@@ -140,5 +141,33 @@ namespace StudentsDiary
             
         }
 
+        private void cbProfileName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedProfile = cbProfileName.SelectedItem.ToString();
+            var students = DeserializeFromFile();
+            var studentFromProfileName = students.Where(s => s.AcademicProfile.ProfileName == selectedProfile).ToList();
+            dgvDiary.DataSource = null;
+            if (selectedProfile == "Wszystkie kierunki")
+            {
+                
+                dgvDiary.DataSource = students;
+            }
+            else
+            {
+                dgvDiary.DataSource = studentFromProfileName;
+            }
+
+        }
+
+        private void InicjalizeCombobox(List<string> listWithtemsToAdd, ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+            comboBox.Items.Add("Wszystkie kierunki");
+            comboBox.SelectedIndex = 0;
+            foreach (var item in listWithtemsToAdd)
+            {
+                comboBox.Items.Add(item);
+            }
+        }
     }
 }

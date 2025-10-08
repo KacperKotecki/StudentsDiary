@@ -100,6 +100,7 @@
             this.cbProfileName.Name = "cbProfileName";
             this.cbProfileName.Size = new System.Drawing.Size(151, 21);
             this.cbProfileName.TabIndex = 5;
+            this.cbProfileName.SelectedIndexChanged += new System.EventHandler(this.cbProfileName_SelectedIndexChanged);
             // 
             // Main
             // 
