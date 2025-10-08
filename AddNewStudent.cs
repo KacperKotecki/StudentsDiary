@@ -14,7 +14,7 @@ namespace StudentsDiary
 {
     public partial class AddNewStudent : Form
     {
-        private string _filePath = Path.Combine(Environment.CurrentDirectory, "..\\..\\", "students.txt");
+        private FileHelper _fileHelper = new FileHelper(Path.Combine(Environment.CurrentDirectory, "..\\..\\", "students.txt"));
         private bool _isEditMode = false;
 
         
@@ -37,7 +37,7 @@ namespace StudentsDiary
 
             tbFirstName.Select();
 
-            var students = DeserializeFromFile();
+            var students = _fileHelper.DeserializeFromFile();
             var thisstudent = students.FirstOrDefault(s => s.Id == id);
 
             tbId.Text = thisstudent.Id.ToString();
@@ -143,7 +143,7 @@ namespace StudentsDiary
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var students = DeserializeFromFile();
+            var students = _fileHelper.DeserializeFromFile();
 
             if (_isEditMode)
             {
@@ -191,7 +191,7 @@ namespace StudentsDiary
                 students.Add(newStudent);
             }
 
-            SerializeToFile(students);
+            _fileHelper.SerializeToFile(students);
             this.Close();
 
         }
@@ -201,28 +201,6 @@ namespace StudentsDiary
             this.Close();
         }
 
-        public void SerializeToFile(List<Student> students)
-        {
-            var serializer = new XmlSerializer(typeof(List<Student>));
-            using (var streamWriter = new StreamWriter(_filePath))
-            {
-                serializer.Serialize(streamWriter, students);
-                streamWriter.Close();
-            }
-        }
-        private List<Student> DeserializeFromFile()
-        {
-            if (!File.Exists(_filePath))
-            {
-                return new List<Student>();
-            }
-            var serializer = new XmlSerializer(typeof(List<Student>));
-            using (var streamReader = new StreamReader(_filePath))
-            {
-                var students = (List<Student>)serializer.Deserialize(streamReader);
-                streamReader.Close();
-                return students;
-            }
-        }
+        
     }
 }

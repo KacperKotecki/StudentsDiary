@@ -14,13 +14,13 @@ namespace StudentsDiary
 {
     public partial class GradesForm : Form
     {
-        private string _filePath = Path.Combine(Environment.CurrentDirectory, "..\\..\\", "students.txt");
+        private FileHelper _fileHelper = new FileHelper(Path.Combine(Environment.CurrentDirectory, "..\\..\\", "students.txt"));
         private List<Student> _students;
 
         public GradesForm(int id)
         {
             InitializeComponent();
-            _students = DeserializeFromFile();
+            _students = _fileHelper.DeserializeFromFile();
             AddItemsToComboBox(id);
         }
 
@@ -61,7 +61,7 @@ namespace StudentsDiary
 
             selectedStudent.Grades.Add(newGrade);
 
-            SerializeToFile(_students);
+            _fileHelper.SerializeToFile(_students);
             dgvGrades.DataSource = null;
             dgvGrades.DataSource = selectedStudent.Grades;
         }
@@ -106,7 +106,7 @@ namespace StudentsDiary
                     selectedStudent.Grades.RemoveAll(g => g.Values.ToString() == dgvGrades.SelectedRows[0].Cells[1].Value.ToString() && g.SubjectName == dgvGrades.SelectedRows[0].Cells[0].Value.ToString() && g.DateOfGrade.ToString() == dgvGrades.SelectedRows[0].Cells[2].Value.ToString());
                     MessageBox.Show("Ocena została usunięta");
 
-                    SerializeToFile(_students);
+                    _fileHelper.SerializeToFile(_students);
 
                     dgvGrades.DataSource = null;
                     dgvGrades.DataSource = selectedStudent.Grades;
@@ -123,7 +123,7 @@ namespace StudentsDiary
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            SerializeToFile(_students);
+            _fileHelper.SerializeToFile(_students);
             this.Close();
         }
 
@@ -132,29 +132,7 @@ namespace StudentsDiary
             this.Close();
         }
 
-        public void SerializeToFile(List<Student> students)
-        {
-            var serializer = new XmlSerializer(typeof(List<Student>));
-            using (var streamWriter = new StreamWriter(_filePath))
-            {
-                serializer.Serialize(streamWriter, students);
-                streamWriter.Close();
-            }
-        }
-        private List<Student> DeserializeFromFile()
-        {
-            if (!File.Exists(_filePath))
-            {
-                return new List<Student>();
-            }
-            var serializer = new XmlSerializer(typeof(List<Student>));
-            using (var streamReader = new StreamReader(_filePath))
-            {
-                var students = (List<Student>)serializer.Deserialize(streamReader);
-                streamReader.Close();
-                return students;
-            }
-        }
+        
 
         private void cbChooseStudent_SelectedIndexChanged(object sender, EventArgs e)
         {

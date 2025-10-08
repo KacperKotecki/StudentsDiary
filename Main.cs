@@ -14,44 +14,22 @@ namespace StudentsDiary
 {
     public partial class Main : Form
     {
-        private string _filePath = Path.Combine(Environment.CurrentDirectory, "..\\..\\", "students.txt");
+        private FileHelper _fileHelper = new FileHelper(Path.Combine(Environment.CurrentDirectory, "..\\..\\", "students.txt"));
         public Main()
         {
             InitializeComponent();
-            var students = DeserializeFromFile();
+            var students = _fileHelper.DeserializeFromFile();
             dgvDiary.DataSource = students;
             SetColumnHeaders();
             InicjalizeCombobox(AcademicDataSources.Profiles, cbProfileName);
         }
-        public void SerializeToFile(List<Student> students)
-        {
-            var serializer = new XmlSerializer(typeof(List<Student>));
-            using (var streamWriter = new StreamWriter(_filePath))
-            { 
-                serializer.Serialize(streamWriter, students);
-                streamWriter.Close();
-            }
-        }
-        private List<Student> DeserializeFromFile()
-        {
-            if (!File.Exists(_filePath))
-            {
-                return new List<Student>();
-            }
-            var serializer = new XmlSerializer(typeof(List<Student>));
-            using (var streamReader = new StreamReader(_filePath))
-            {
-                var students = (List<Student>)serializer.Deserialize(streamReader);
-                streamReader.Close();
-                return students;
-            }
-        }
+        
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             var addNewStudentForm = new AddNewStudent();
             addNewStudentForm.ShowDialog();
 
-            var students = DeserializeFromFile();
+            var students = _fileHelper.DeserializeFromFile();
             dgvDiary.DataSource = students;
 
         }
@@ -92,13 +70,13 @@ namespace StudentsDiary
             var editStudentForm = new AddNewStudent(Convert.ToInt32(dgvDiary.SelectedRows[0].Cells[0].Value));
             editStudentForm.ShowDialog();
 
-            var students = DeserializeFromFile();
+            var students = _fileHelper.DeserializeFromFile();
             dgvDiary.DataSource = students;
         }
 
         private void btnDeleteStudent_Click(object sender, EventArgs e)
         {
-            var students = DeserializeFromFile();
+            var students = _fileHelper.DeserializeFromFile();
             if (dgvDiary.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Wybierz studenta aby usunąć go z listy studentów");
@@ -120,7 +98,7 @@ namespace StudentsDiary
                 {
                     students.RemoveAll(s => s.Id == studentToDelete.Id);
                     MessageBox.Show("Student został usunięty.");
-                    SerializeToFile(students);
+                    _fileHelper.SerializeToFile(students);
                     dgvDiary.DataSource = students;
                 }
                 else 
@@ -144,7 +122,7 @@ namespace StudentsDiary
         private void cbProfileName_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedProfile = cbProfileName.SelectedItem.ToString();
-            var students = DeserializeFromFile();
+            var students = _fileHelper.DeserializeFromFile();
             var studentFromProfileName = students.Where(s => s.AcademicProfile.ProfileName == selectedProfile).ToList();
             dgvDiary.DataSource = null;
             if (selectedProfile == "Wszystkie kierunki")
