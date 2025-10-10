@@ -16,16 +16,17 @@ namespace StudentsDiary
     {
         private FileHelper _fileHelper = new FileHelper(Path.Combine(Environment.CurrentDirectory, "..\\..\\", "students.txt"));
         private bool _isEditMode = false;
+        private InitializeComponents _initializeComponents = new InitializeComponents();
 
-        
         public AddNewStudent()
         {
             InitializeComponent();
             _isEditMode = false;
             tbFirstName.Select();
-            InicjalizeCombobox(AcademicDataSources.Profiles, cbProfileName);
-            InicjalizeCombobox(AcademicDataSources.Degrees, cbDegree);
-            InicjalizeCombobox(AcademicDataSources.Groups, cbGroups);
+
+            _initializeComponents.InicjalizeCombobox(cbProfileName, AcademicDataSources.Profiles);
+            _initializeComponents.InicjalizeCombobox(cbDegree, AcademicDataSources.Degrees);
+            _initializeComponents.InicjalizeCombobox(cbGroups, AcademicDataSources.Groups);
 
         }
         public AddNewStudent(int id)
@@ -47,10 +48,9 @@ namespace StudentsDiary
             tbIndexNumber.Text = thisstudent.IndexNumber;
             dtpBirthday.Value = thisstudent.DateOfBirth;
 
-
-            InicjalizeCombobox(AcademicDataSources.Profiles, cbProfileName);
-            InicjalizeCombobox(AcademicDataSources.Degrees, cbDegree);
-            InicjalizeCombobox(AcademicDataSources.Groups, cbGroups);
+            _initializeComponents.InicjalizeCombobox(cbProfileName, AcademicDataSources.Profiles);
+            _initializeComponents.InicjalizeCombobox(cbDegree, AcademicDataSources.Degrees);
+            _initializeComponents.InicjalizeCombobox(cbGroups, AcademicDataSources.Groups);
 
             
             cbProfileName.SelectedItem = thisstudent.AcademicProfile.ProfileName.ToString();
@@ -73,18 +73,6 @@ namespace StudentsDiary
             tbFirstName.Enabled = true;
         }
 
-        
-
-        
-
-        private void InicjalizeCombobox(List<string> listWithtemsToAdd, ComboBox comboBox)
-        {
-            foreach (var item in listWithtemsToAdd)
-            {
-                comboBox.Items.Add(item);
-            }
-        }
-       
 
         private void cbDegree_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -121,8 +109,8 @@ namespace StudentsDiary
                 List<string> listWithSpecializations = new List<string>();
                 listWithSpecializations = AcademicDataSources.SpecializationsByProfile[selectedProfile];
 
-
-                InicjalizeCombobox(listWithSpecializations, cbSpecjalization);
+                _initializeComponents.InicjalizeCombobox(cbSpecjalization, listWithSpecializations);
+                
             }
             else
             {

@@ -15,13 +15,23 @@ namespace StudentsDiary
     public partial class Main : Form
     {
         private FileHelper _fileHelper = new FileHelper(Path.Combine(Environment.CurrentDirectory, "..\\..\\", "students.txt"));
+
+        private InitializeComponents _initializeComponents = new InitializeComponents();
+
+        private List<string> _listHeadersToAdd = new List<string>() { "id", "Imię", "Nazwisko", "Pesel", "Numer indeksu", "Data urodzenia", "Studia" };
+
+        private List<string> _listOptionsToAdd = AcademicDataSources.Profiles.ToList();
+
+
         public Main()
         {
             InitializeComponent();
             var students = _fileHelper.DeserializeFromFile();
             dgvDiary.DataSource = students;
-            SetColumnHeaders();
-            InicjalizeCombobox(AcademicDataSources.Profiles, cbProfileName);
+
+            _listOptionsToAdd.Insert(0, "Wszystkie kierunki");
+            _initializeComponents.InicjalizeCombobox(cbProfileName, _listOptionsToAdd);
+            _initializeComponents.SetColumnHeaders(dgvDiary, _listHeadersToAdd);
         }
         
         private void btnAddStudent_Click(object sender, EventArgs e)
@@ -108,16 +118,8 @@ namespace StudentsDiary
             }
 
         }
-        private void SetColumnHeaders()
-        {
-            dgvDiary.Columns[0].HeaderText = "Id";
-            dgvDiary.Columns[1].HeaderText = "Imię";
-            dgvDiary.Columns[2].HeaderText = "Nazwisko";
-            dgvDiary.Columns[3].HeaderText = "Pesel";
-            dgvDiary.Columns[4].HeaderText = "Numer indeksu";
-            dgvDiary.Columns[5].HeaderText = "Data urodzenia";
-            
-        }
+        
+
 
         private void cbProfileName_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -137,15 +139,15 @@ namespace StudentsDiary
 
         }
 
-        private void InicjalizeCombobox(List<string> listWithtemsToAdd, ComboBox comboBox)
-        {
-            comboBox.Items.Clear();
-            comboBox.Items.Add("Wszystkie kierunki");
-            comboBox.SelectedIndex = 0;
-            foreach (var item in listWithtemsToAdd)
-            {
-                comboBox.Items.Add(item);
-            }
-        }
+        //private void InicjalizeCombobox(List<string> listWithtemsToAdd, ComboBox comboBox)
+        //{
+        //    comboBox.Items.Clear();
+        //    comboBox.Items.Add("Wszystkie kierunki");
+        //    comboBox.SelectedIndex = 0;
+        //    foreach (var item in listWithtemsToAdd)
+        //    {
+        //        comboBox.Items.Add(item);
+        //    }
+        //}
     }
 }

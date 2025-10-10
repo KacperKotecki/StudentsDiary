@@ -55,6 +55,7 @@
       <DependentUpon>AddNewStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="FileHelper.cs" />
+    <Compile Include="FormHelper.cs" />
     <Compile Include="Grade.cs" />
     <Compile Include="GradesForm.cs">
       <SubType>Form</SubType>
@@ -62,6 +63,7 @@
     <Compile Include="GradesForm.Designer.cs">
       <DependentUpon>GradesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InitializeComponents.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

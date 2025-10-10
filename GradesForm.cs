@@ -15,13 +15,21 @@ namespace StudentsDiary
     public partial class GradesForm : Form
     {
         private FileHelper _fileHelper = new FileHelper(Path.Combine(Environment.CurrentDirectory, "..\\..\\", "students.txt"));
+
+        private InitializeComponents _initializeComponents = new InitializeComponents();
+
         private List<Student> _students;
 
-        public GradesForm(int id)
+        private List<string> listHeadersToAdd = new List<string>() { "Przedmiot", "Ocena", "Data wystawienia oceny" };
+
+        private List<string> listSubjectToAdd = new List<string> { "Matematyka", "Fizyka", "Chemia", "Biologia", "Historia", "WOS", "Informatyka", "Język Polski", "Język Angielski", "Język Niemiecki", "Wychowanie Fizyczne" };
+    public GradesForm(int studentsId)
         {
             InitializeComponent();
             _students = _fileHelper.DeserializeFromFile();
-            AddItemsToComboBox(id);
+
+            _initializeComponents.InicjalizeCombobox(cbChooseStudent, _students, studentsId);
+            _initializeComponents.InicjalizeCombobox(cbListOfSubject, listSubjectToAdd);
         }
 
         private void btnAddNewGrades_Click(object sender, EventArgs e)
@@ -145,33 +153,11 @@ namespace StudentsDiary
             lbBirthDate.Text = selectedStudent.DateOfBirth.ToShortDateString();
 
             dgvGrades.DataSource = selectedStudent.Grades;
-            SetColumnHeaders();
-
-        }
-        private void SetColumnHeaders()
-        {
-            dgvGrades.Columns[0].HeaderText = "Przedmiot";
-            dgvGrades.Columns[1].HeaderText = "Ocena";
-            dgvGrades.Columns[2].HeaderText = "Data wystawienia oceny";
+            _initializeComponents.SetColumnHeaders(dgvGrades, listHeadersToAdd);
 
         }
 
-        private void AddItemsToComboBox(int id)
-        {
-            var listOfSubjects = new List<string>
-            { "Matematyka", "Fizyka", "Chemia", "Biologia", "Historia", "WOS", "Informatyka", "Język Polski", "Język Angielski", "Język Niemiecki", "Wychowanie Fizyczne" };
 
-            foreach (var student in _students)
-            {
-                cbChooseStudent.Items.Add(student);
-            }
-           
-            foreach (var subject in listOfSubjects)
-            {
-                cbListOfSubject.Items.Add(subject);
-            }
-            cbChooseStudent.SelectedItem = _students.FirstOrDefault(s => s.Id == id);
-        }
 
     }
 }
